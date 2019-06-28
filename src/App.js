@@ -55,7 +55,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BackgroundImage />
+        <BackgroundImage class="bg"/>
         <LaunchInfo details={this.state} />
       </div>
     );
