@@ -28,7 +28,7 @@ class App extends Component {
       const nextLaunch = launch.launches[0];
       this.setState({
         data: nextLaunch,
-        
+
         rockets: this.state.rockets.find(rocket => rocket.name === nextLaunch.rocket.familyname),
       });
     })
