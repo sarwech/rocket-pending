@@ -7,7 +7,7 @@ class LaunchInfo extends Component {
         return (
             <div>
                 <div className="mission-info">
-                    <h1>{console.log(this.props.details.data.rocket)}</h1>
+                    <h1>{this.props.details.data.name}</h1>
                     <h2>{this.props.details.data.net}</h2>
                 </div>
             </div>
