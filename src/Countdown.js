@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+// import "../App.css";
 
 class Countdown extends Component {
     state = {
@@ -13,7 +13,7 @@ class Countdown extends Component {
 
     componentDidMount() {
         setTimeout(()=> {
-            let countdownTime = new Date(this.props.time.net);
+            let countdownTime = new Date(this.props.time);
             return setInterval(() => {
                 let currentTime = new Date();
                 let difference = countdownTime - currentTime;
