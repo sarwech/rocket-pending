@@ -8,7 +8,6 @@ const BackgroundImage = props => {
     } else {
       return (
         <div className="container">
-          {console.log(props.image)}
           <img className="rocket-image" src={require(`../Electron.jpeg`)} alt="Rocket" />
         </div>
       );
