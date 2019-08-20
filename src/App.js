@@ -8,9 +8,9 @@ import './App.css';
 const ROCKETSLIST = [
   { id: 0, name: 'Electron', src: './images/electron_1.jpg' },
   { id: 1, name: 'Atlas', src: './images/atlas-v.jpg' },
-  { id: 2, name: 'Soyuz', src: 'soyuz' },
-  { id: 3, name: 'Falcon', image: 'falcon' },
-  { id: 4, name: 'Proton / UR-500', image: '../images/falcon.jpg' }
+  { id: 2, name: 'Soyuz', src: 'soyuz.jpeg' },
+  { id: 3, name: 'Falcon', src: 'falcon.jpeg' },
+  { id: 4, name: 'Proton / UR-500', src: 'Electron.jpeg' }
 ];
 
 const App = () => {
@@ -25,27 +25,26 @@ const App = () => {
       .then(launch => {
         const nextLaunch = launch.launches[0];
         setData(nextLaunch);
-        setRockets(rockets.find(
-          rocket => rocket.name === nextLaunch.rocket.familyname
-        ));
+        setRockets(
+          rockets.find(rocket => rocket.name === nextLaunch.rocket.familyname)
+        );
       })
       .catch(error => {
         console.log(`There was a problem getting the launch data`, error);
       });
     setLoading(false);
-  })
+  }, []);
 
   if (loading) {
-
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
   return (
     <div className="App">
-      <BackgroundImage loading={loading} image={`../Electron.jpeg`} />
+      <BackgroundImage loading={loading} image={rockets.src} />
       <LaunchInfo data={data} />
       <Countdown time={data.net} />
     </div>
   );
-}
+};
 
 export default App;
